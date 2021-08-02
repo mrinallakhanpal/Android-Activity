@@ -102,10 +102,10 @@ class MainActivity : AppCompatActivity() {
     var myrv: RecyclerView = findViewById<RecyclerView>(R.id.recyclerView)
     myrv.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL,false)
     var myDataList = ArrayList<UserData>()
-    myDataList.add(UserData("John","john@gmail.com","1234567890"))
-    myDataList.add(UserData("Helen","helenhello@gmail.com","8795468235"))
-    myDataList.add(UserData("Rocky","rocky@yahoo.com","12548879655"))
-    myDataList.add(UserData("Andrew","andrew@gmail.com","789515145852"))
+    myDataList.add(UserData("John"))
+    myDataList.add(UserData("Helen"))
+    myDataList.add(UserData("Rocky"))
+    myDataList.add(UserData("Andrew"))
     myrv.adapter = MyAdapter(myDataList)
 
 }
