@@ -63,40 +63,7 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
-    private fun signUpUser(email: String, password: String) {
-
-        progressBar.visibility = View.VISIBLE
-        btn_login.visibility = View.INVISIBLE
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
-
-                if (task.isSuccessful) {
-
-                    progressBar.visibility = View.INVISIBLE
-
-                    var userintent = Intent(applicationContext, LoginActivity::class.java)
-                    userintent.flags =
-                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(userintent)
-
-
-                } else {
-                    progressBar.visibility = View.INVISIBLE
-                    btn_login.visibility = View.VISIBLE
-
-                    Toast.makeText(applicationContext, "" + task.exception, Toast.LENGTH_SHORT)
-                        .show()
-                }
-            })
-
-        Toast.makeText(applicationContext, "Email: " + email + "\nPassword: " + password, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun getUserDetails(email: String, password: String) {
-        Toast.makeText(applicationContext,"Email: " + email + "\nPassword: " + password, Toast.LENGTH_SHORT).show()
-
-    }
+    
 
     //List View after login
     var myrv: RecyclerView = findViewById<RecyclerView>(R.id.recyclerView)
